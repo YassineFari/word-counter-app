@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://texttoolshub.com/sitemap.xml
+Sitemap: https://6a3ee46c25d58aefa1382f1b--chic-marigold-a5df2e.netlify.app/sitemap.xml
