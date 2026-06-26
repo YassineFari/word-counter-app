@@ -13,11 +13,15 @@ export default function TextRewriterForm() {
   const { t } = useLanguage();
   const [text, setText] = useState("");
   const [rewritten, setRewritten] = useState("");
+  const [rewriting, setRewriting] = useState(false);
   const [intensity, setIntensity] = useState<"light" | "medium" | "strong">("medium");
 
-  const handleRewrite = () => {
+  const handleRewrite = async () => {
     if (!text.trim()) return;
-    setRewritten(rewriteText(text, intensity));
+    setRewriting(true);
+    const result = await rewriteText(text, intensity);
+    setRewritten(result);
+    setRewriting(false);
   };
 
   const faqItems = [
@@ -58,10 +62,15 @@ export default function TextRewriterForm() {
             </div>
             <button
               onClick={handleRewrite}
-              disabled={!text.trim()}
+              disabled={!text.trim() || rewriting}
               className="px-6 py-2 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              Rewrite Text
+              {rewriting ? (
+                <span className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Rewriting...
+                </span>
+              ) : "Rewrite Text"}
             </button>
           </div>
           {rewritten && (

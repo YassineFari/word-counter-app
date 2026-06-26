@@ -248,19 +248,36 @@ const synonyms: Record<string, string[]> = {
   keep: ["retain", "maintain", "preserve", "sustain", "continue"],
 };
 
-export function rewriteText(text: string, intensity: "light" | "medium" | "strong"): string {
+let synonymCache: Record<string, string[]> = {};
+
+async function fetchSynonyms(word: string): Promise<string[]> {
+  if (synonymCache[word]) return synonymCache[word];
+  try {
+    const res = await fetch(`https://api.datamuse.com/words?rel_syn=${encodeURIComponent(word)}&max=5`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    const syns: string[] = data.map((d: { word: string }) => d.word.replace("_", " "));
+    synonymCache[word] = syns;
+    return syns;
+  } catch {
+    return [];
+  }
+}
+
+export async function rewriteText(text: string, intensity: "light" | "medium" | "strong"): Promise<string> {
   if (!text.trim()) return "";
   const rate = intensity === "light" ? 0.3 : intensity === "medium" ? 0.5 : 0.7;
   const words = text.split(/(\b\w+\b)/g);
-  return words.map((w) => {
+  const results = await Promise.all(words.map(async (w) => {
     const lower = w.toLowerCase();
-    const syns = synonyms[lower];
-    if (syns && Math.random() < rate) {
-      const pick = syns[Math.floor(Math.random() * syns.length)];
-      return w[0] === w[0]?.toUpperCase()
-        ? pick.charAt(0).toUpperCase() + pick.slice(1)
-        : pick;
-    }
-    return w;
-  }).join("");
+    if (Math.random() >= rate) return w;
+    const apiSyns = await fetchSynonyms(lower);
+    const allSyns = apiSyns.length > 0 ? apiSyns : (synonyms[lower] || []);
+    if (allSyns.length === 0) return w;
+    const pick = allSyns[Math.floor(Math.random() * allSyns.length)];
+    return w[0] === w[0]?.toUpperCase()
+      ? pick.charAt(0).toUpperCase() + pick.slice(1)
+      : pick;
+  }));
+  return results.join("");
 }
