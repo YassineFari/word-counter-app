@@ -1,0 +1,72 @@
+const fr: Record<string, string> = {
+  "site.name": "TextToolsHub",
+  "site.description": "Outils d'analyse de texte en ligne gratuits. Comptez les mots, caractères, phrases, paragraphes et calculez le temps de lecture. Rapide, précis et respectueux de la vie privée.",
+
+  "nav.category.textAnalysis": "Analyse de texte",
+  "nav.wordCounter": "Compteur de mots",
+  "nav.characterCounter": "Compteur de caractères",
+  "nav.readingTime": "Temps de lecture",
+  "nav.login": "Connexion",
+  "nav.register": "S'inscrire",
+
+  "hero.title": "Analyse de texte en ligne",
+  "hero.titleAccent": "gratuite",
+  "hero.description": "Comptez les mots, caractères, phrases, paragraphes et calculez le temps de lecture. Rapide, précis et totalement privé.",
+
+  "tools.heading": "Tous les outils d'analyse",
+  "tools.wordCounter.title": "Compteur de mots",
+  "tools.wordCounter.desc": "Comptez instantanément le nombre de mots dans votre texte. Parfait pour les dissertations, articles et devoirs.",
+  "tools.charCounter.title": "Compteur de caractères",
+  "tools.charCounter.desc": "Comptez les caractères avec et sans espaces. Idéal pour les tweets, bios et méta-descriptions.",
+  "tools.sentenceCounter.title": "Compteur de phrases",
+  "tools.sentenceCounter.desc": "Comptez le nombre de phrases dans votre texte pour améliorer la lisibilité.",
+  "tools.paragraphCounter.title": "Compteur de paragraphes",
+  "tools.paragraphCounter.desc": "Comptez les paragraphes et maintenez une structure de contenu appropriée.",
+  "tools.readingTime.title": "Calcul du temps de lecture",
+  "tools.readingTime.desc": "Calculez le temps nécessaire pour lire un texte. Essentiel pour les blogueurs et créateurs de contenu.",
+
+  "seo.heading": "Pourquoi utiliser TextToolsHub ?",
+  "seo.p1": "TextToolsHub propose un ensemble complet d'outils d'analyse de texte gratuits conçus pour les rédacteurs, étudiants, professionnels du SEO et créateurs de contenu.",
+  "seo.p2": "Tout le traitement s'effectue localement dans votre navigateur, garantissant la confidentialité de votre texte. Pas de téléchargement serveur, ni de collecte de données.",
+  "seo.p3": "Nos outils sont construits avec des technologies web modernes pour un chargement rapide et une expérience utilisateur fluide.",
+
+  "faq.heading": "Questions fréquentes",
+  "faq.q1": "Qu'est-ce que TextToolsHub ?",
+  "faq.a1": "TextToolsHub est une suite gratuite d'outils d'analyse de texte en ligne. Elle comprend un compteur de mots, de caractères, de phrases, de paragraphes et un calculateur de temps de lecture.",
+  "faq.q2": "Mon texte est-il stocké ou partagé ?",
+  "faq.a2": "Non. Tout le traitement est effectué dans votre navigateur. Votre texte ne quitte jamais votre appareil.",
+  "faq.q3": "Ces outils sont-ils gratuits ?",
+  "faq.a3": "Oui, tous les outils sont complètement gratuits. Sans limite d'utilisation, inscription requise ni frais cachés.",
+  "faq.q4": "Comment le temps de lecture est-il calculé ?",
+  "faq.a4": "Le temps de lecture est calculé sur la base d'une vitesse de lecture moyenne de 238 mots par minute pour les adultes.",
+  "faq.q5": "Puis-je utiliser ces outils sur mobile ?",
+  "faq.a5": "Oui, TextToolsHub est entièrement responsive et fonctionne sur tous les appareils.",
+
+  "ad.label": "Publicité",
+
+  "footer.description": "Outils d'analyse de texte en ligne gratuits. Comptez mots, caractères, phrases, paragraphes et temps de lecture instantanément.",
+  "footer.tools": "Outils",
+  "footer.support": "Support",
+  "footer.contact": "Nous contacter",
+  "footer.freeTools": "Outils gratuits en ligne",
+  "footer.copyright": "Tous droits réservés.",
+
+  "editor.label": "Saisissez votre texte",
+  "editor.copy": "Copier",
+  "editor.clear": "Effacer",
+  "editor.placeholder": "Commencez à taper ou collez votre texte ici...",
+
+  "stats.heading": "Statistiques",
+  "stats.words": "Mots",
+  "stats.characters": "Caractères",
+  "stats.charNoSpace": "Caractères (sans espaces)",
+  "stats.sentences": "Phrases",
+  "stats.paragraphs": "Paragraphes",
+  "stats.readingTime": "Temps de lecture",
+  "stats.spaces": "Espaces",
+  "stats.lines": "Lignes",
+  "stats.nonEmptyLines": "Lignes non vides",
+  "stats.pages": "Pages",
+};
+
+export default fr;

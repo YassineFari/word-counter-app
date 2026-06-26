@@ -1,0 +1,72 @@
+const it: Record<string, string> = {
+  "site.name": "TextToolsHub",
+  "site.description": "Strumenti gratuiti di analisi del testo online. Conta parole, caratteri, frasi, paragrafi e calcola il tempo di lettura. Veloce, preciso e rispettoso della privacy.",
+
+  "nav.category.textAnalysis": "Analisi del testo",
+  "nav.wordCounter": "Contaparole",
+  "nav.characterCounter": "Contacaratteri",
+  "nav.readingTime": "Tempo di lettura",
+  "nav.login": "Accedi",
+  "nav.register": "Registrati",
+
+  "hero.title": "Analisi del testo online",
+  "hero.titleAccent": "gratuita",
+  "hero.description": "Conta parole, caratteri, frasi, paragrafi e calcola il tempo di lettura. Veloce, preciso e completamente privato.",
+
+  "tools.heading": "Tutti gli strumenti",
+  "tools.wordCounter.title": "Contaparole",
+  "tools.wordCounter.desc": "Conta istantaneamente le parole nel tuo testo. Perfetto per saggi, articoli e compiti.",
+  "tools.charCounter.title": "Contacaratteri",
+  "tools.charCounter.desc": "Conta caratteri con e senza spazi. Ideale per tweet, bio e metadescrizioni.",
+  "tools.sentenceCounter.title": "Contafrasi",
+  "tools.sentenceCounter.desc": "Conta il numero di frasi nel tuo testo per migliorare la leggibilità.",
+  "tools.paragraphCounter.title": "Contaparagrafi",
+  "tools.paragraphCounter.desc": "Conta i paragrafi nel tuo testo e mantieni una struttura appropriata.",
+  "tools.readingTime.title": "Calcolatore di lettura",
+  "tools.readingTime.desc": "Calcola quanto tempo ci vuole per leggere qualsiasi testo. Essenziale per blogger e creatori.",
+
+  "seo.heading": "Perché usare TextToolsHub?",
+  "seo.p1": "TextToolsHub offre una suite completa di strumenti gratuiti di analisi del testo per scrittori, studenti, professionisti SEO e creatori di contenuti.",
+  "seo.p2": "Tutta l'elaborazione avviene localmente nel tuo browser, garantendo la privacy del tuo testo. Nessun caricamento su server o raccolta dati.",
+  "seo.p3": "I nostri strumenti sono costruiti con tecnologie web moderne per un caricamento veloce e un'esperienza utente fluida.",
+
+  "faq.heading": "Domande frequenti",
+  "faq.q1": "Cos'è TextToolsHub?",
+  "faq.a1": "TextToolsHub è una suite gratuita di strumenti di analisi del testo online che include contaparole, contacaratteri, contafrasi, contaparagrafi e un calcolatore del tempo di lettura.",
+  "faq.q2": "Il mio testo viene memorizzato o condiviso?",
+  "faq.a2": "No. Tutta l'elaborazione avviene nel tuo browser. Il tuo testo non lascia mai il tuo dispositivo.",
+  "faq.q3": "Questi strumenti sono gratuiti?",
+  "faq.a3": "Sì, tutti gli strumenti sono completamente gratuiti. Nessun limite di utilizzo, registrazione o costi nascosti.",
+  "faq.q4": "Come viene calcolato il tempo di lettura?",
+  "faq.a4": "Il tempo di lettura viene calcolato in base a una velocità media di lettura di 238 parole al minuto.",
+  "faq.q5": "Posso usare questi strumenti su dispositivi mobili?",
+  "faq.a5": "Sì, TextToolsHub è completamente responsivo e funziona su tutti i dispositivi.",
+
+  "ad.label": "Pubblicità",
+
+  "footer.description": "Strumenti gratuiti di analisi del testo online. Conta parole, caratteri, frasi, paragrafi e tempo di lettura all'istante.",
+  "footer.tools": "Strumenti",
+  "footer.support": "Supporto",
+  "footer.contact": "Contattaci",
+  "footer.freeTools": "Strumenti gratuiti",
+  "footer.copyright": "Tutti i diritti riservati.",
+
+  "editor.label": "Inserisci il tuo testo",
+  "editor.copy": "Copia",
+  "editor.clear": "Cancella",
+  "editor.placeholder": "Inizia a digitare o incolla il tuo testo qui...",
+
+  "stats.heading": "Statistiche",
+  "stats.words": "Parole",
+  "stats.characters": "Caratteri",
+  "stats.charNoSpace": "Caratteri (senza spazi)",
+  "stats.sentences": "Frasi",
+  "stats.paragraphs": "Paragrafi",
+  "stats.readingTime": "Tempo di lettura",
+  "stats.spaces": "Spazi",
+  "stats.lines": "Righe",
+  "stats.nonEmptyLines": "Righe non vuote",
+  "stats.pages": "Pagine",
+};
+
+export default it;

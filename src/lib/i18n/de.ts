@@ -1,0 +1,72 @@
+const de: Record<string, string> = {
+  "site.name": "TextToolsHub",
+  "site.description": "Kostenlose Online-Textanalyse-Tools. Zählen Sie Wörter, Zeichen, Sätze, Absätze und berechnen Sie die Lesezeit. Schnell, genau und datenschutzfreundlich.",
+
+  "nav.category.textAnalysis": "Textanalyse",
+  "nav.wordCounter": "Wortzähler",
+  "nav.characterCounter": "Zeichenzähler",
+  "nav.readingTime": "Lesezeit",
+  "nav.login": "Anmelden",
+  "nav.register": "Registrieren",
+
+  "hero.title": "Kostenlose Online-Textanalyse",
+  "hero.titleAccent": "Tools",
+  "hero.description": "Zählen Sie Wörter, Zeichen, Sätze, Absätze und berechnen Sie die Lesezeit. Schnell, genau und völlig privat.",
+
+  "tools.heading": "Alle Analysetools",
+  "tools.wordCounter.title": "Wortzähler",
+  "tools.wordCounter.desc": "Zählen Sie sofort die Wörter in Ihrem Text. Perfekt für Aufsätze, Artikel und Aufgaben.",
+  "tools.charCounter.title": "Zeichenzähler",
+  "tools.charCounter.desc": "Zählen Sie Zeichen mit und ohne Leerzeichen. Ideal für Tweets, Bios und Metabeschreibungen.",
+  "tools.sentenceCounter.title": "Satzzähler",
+  "tools.sentenceCounter.desc": "Zählen Sie die Sätze in Ihrem Text, um die Lesbarkeit zu verbessern.",
+  "tools.paragraphCounter.title": "Absatzzähler",
+  "tools.paragraphCounter.desc": "Zählen Sie Absätze in Ihrem Text und behalten Sie eine saubere Struktur bei.",
+  "tools.readingTime.title": "Lesezeit-Rechner",
+  "tools.readingTime.desc": "Berechnen Sie die Lesezeit für jeden Text. Unverzichtbar für Blogger und Content-Ersteller.",
+
+  "seo.heading": "Warum TextToolsHub?",
+  "seo.p1": "TextToolsHub bietet eine umfassende Sammlung kostenloser Textanalyse-Tools für Autoren, Studenten, SEO-Profis und Content-Ersteller.",
+  "seo.p2": "Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser, sodass Ihr Text privat und sicher bleibt. Kein Server-Upload, keine Datenerfassung.",
+  "seo.p3": "Unsere Tools werden mit modernen Webtechnologien entwickelt für schnelles Laden und eine flüssige Benutzererfahrung.",
+
+  "faq.heading": "Häufig gestellte Fragen",
+  "faq.q1": "Was ist TextToolsHub?",
+  "faq.a1": "TextToolsHub ist eine kostenlose Online-Suite mit Textanalyse-Tools, darunter Wort-, Zeichen-, Satz- und Absatzzähler sowie ein Lesezeit-Rechner.",
+  "faq.q2": "Wird mein Text gespeichert oder geteilt?",
+  "faq.a2": "Nein. Die gesamte Verarbeitung erfolgt in Ihrem Browser. Ihr Text verlässt nie Ihr Gerät.",
+  "faq.q3": "Sind diese Tools kostenlos?",
+  "faq.a3": "Ja, alle Tools sind völlig kostenlos. Keine Nutzungsbeschränkungen, Registrierung oder versteckte Gebühren.",
+  "faq.q4": "Wie wird die Lesezeit berechnet?",
+  "faq.a4": "Die Lesezeit wird basierend auf einer durchschnittlichen Lesegeschwindigkeit von 238 Wörtern pro Minute berechnet.",
+  "faq.q5": "Kann ich diese Tools auf mobilen Geräten nutzen?",
+  "faq.a5": "Ja, TextToolsHub ist vollständig responsiv und funktioniert auf allen Geräten.",
+
+  "ad.label": "Werbung",
+
+  "footer.description": "Kostenlose Online-Textanalyse-Tools. Zählen Sie Wörter, Zeichen, Sätze, Absätze und Lesezeit sofort.",
+  "footer.tools": "Tools",
+  "footer.support": "Support",
+  "footer.contact": "Kontakt",
+  "footer.freeTools": "Kostenlose Online-Tools",
+  "footer.copyright": "Alle Rechte vorbehalten.",
+
+  "editor.label": "Geben Sie Ihren Text ein",
+  "editor.copy": "Kopieren",
+  "editor.clear": "Löschen",
+  "editor.placeholder": "Beginnen Sie mit der Eingabe oder fügen Sie Ihren Text hier ein...",
+
+  "stats.heading": "Statistiken",
+  "stats.words": "Wörter",
+  "stats.characters": "Zeichen",
+  "stats.charNoSpace": "Zeichen (ohne Leerzeichen)",
+  "stats.sentences": "Sätze",
+  "stats.paragraphs": "Absätze",
+  "stats.readingTime": "Lesezeit",
+  "stats.spaces": "Leerzeichen",
+  "stats.lines": "Zeilen",
+  "stats.nonEmptyLines": "Nicht leere Zeilen",
+  "stats.pages": "Seiten",
+};
+
+export default de;

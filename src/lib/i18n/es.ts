@@ -1,0 +1,72 @@
+const es: Record<string, string> = {
+  "site.name": "TextToolsHub",
+  "site.description": "Herramientas gratuitas de análisis de texto en línea. Cuente palabras, caracteres, oraciones, párrafos y calcule el tiempo de lectura. Rápido, preciso y privado.",
+
+  "nav.category.textAnalysis": "Análisis de texto",
+  "nav.wordCounter": "Contador de palabras",
+  "nav.characterCounter": "Contador de caracteres",
+  "nav.readingTime": "Tiempo de lectura",
+  "nav.login": "Iniciar sesión",
+  "nav.register": "Registrarse",
+
+  "hero.title": "Análisis de texto en línea",
+  "hero.titleAccent": "gratuito",
+  "hero.description": "Cuente palabras, caracteres, oraciones, párrafos y calcule el tiempo de lectura. Rápido, preciso y completamente privado.",
+
+  "tools.heading": "Todas las herramientas",
+  "tools.wordCounter.title": "Contador de palabras",
+  "tools.wordCounter.desc": "Cuente instantáneamente las palabras de su texto. Perfecto para ensayos, artículos y tareas.",
+  "tools.charCounter.title": "Contador de caracteres",
+  "tools.charCounter.desc": "Cuente caracteres con y sin espacios. Ideal para tweets, bios y metadescripciones.",
+  "tools.sentenceCounter.title": "Contador de oraciones",
+  "tools.sentenceCounter.desc": "Cuente las oraciones en su texto para mejorar la legibilidad y estructura.",
+  "tools.paragraphCounter.title": "Contador de párrafos",
+  "tools.paragraphCounter.desc": "Cuente los párrafos en su texto y mantenga una estructura adecuada.",
+  "tools.readingTime.title": "Calculadora de lectura",
+  "tools.readingTime.desc": "Calcule cuánto tiempo se tarda en leer cualquier texto. Esencial para blogueros y creadores.",
+
+  "seo.heading": "¿Por qué usar TextToolsHub?",
+  "seo.p1": "TextToolsHub ofrece un conjunto completo de herramientas gratuitas de análisis de texto para escritores, estudiantes, profesionales SEO y creadores de contenido.",
+  "seo.p2": "Todo el procesamiento se realiza localmente en su navegador, garantizando la privacidad de su texto. Sin cargas al servidor ni recopilación de datos.",
+  "seo.p3": "Nuestras herramientas están construidas con tecnologías web modernas para una carga rápida y una experiencia de usuario fluida.",
+
+  "faq.heading": "Preguntas frecuentes",
+  "faq.q1": "¿Qué es TextToolsHub?",
+  "faq.a1": "TextToolsHub es un conjunto gratuito de herramientas de análisis de texto en línea que incluye contadores de palabras, caracteres, oraciones, párrafos y calculadora de tiempo de lectura.",
+  "faq.q2": "¿Se almacena o comparte mi texto?",
+  "faq.a2": "No. Todo el procesamiento se realiza en su navegador. Su texto nunca sale de su dispositivo.",
+  "faq.q3": "¿Son gratuitas estas herramientas?",
+  "faq.a3": "Sí, todas las herramientas son completamente gratuitas. Sin límites de uso, registro ni cargos ocultos.",
+  "faq.q4": "¿Cómo se calcula el tiempo de lectura?",
+  "faq.a4": "El tiempo de lectura se calcula basándose en una velocidad de lectura promedio de 238 palabras por minuto.",
+  "faq.q5": "¿Puedo usar estas herramientas en móvil?",
+  "faq.a5": "Sí, TextToolsHub es totalmente responsive y funciona en todos los dispositivos.",
+
+  "ad.label": "Anuncio",
+
+  "footer.description": "Herramientas gratuitas de análisis de texto en línea. Cuente palabras, caracteres, oraciones, párrafos y tiempo de lectura al instante.",
+  "footer.tools": "Herramientas",
+  "footer.support": "Soporte",
+  "footer.contact": "Contacto",
+  "footer.freeTools": "Herramientas gratuitas",
+  "footer.copyright": "Todos los derechos reservados.",
+
+  "editor.label": "Introduzca su texto",
+  "editor.copy": "Copiar",
+  "editor.clear": "Borrar",
+  "editor.placeholder": "Empiece a escribir o pegue su texto aquí...",
+
+  "stats.heading": "Estadísticas",
+  "stats.words": "Palabras",
+  "stats.characters": "Caracteres",
+  "stats.charNoSpace": "Caracteres (sin espacios)",
+  "stats.sentences": "Oraciones",
+  "stats.paragraphs": "Párrafos",
+  "stats.readingTime": "Tiempo de lectura",
+  "stats.spaces": "Espacios",
+  "stats.lines": "Líneas",
+  "stats.nonEmptyLines": "Líneas no vacías",
+  "stats.pages": "Páginas",
+};
+
+export default es;
