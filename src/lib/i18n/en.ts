@@ -29,8 +29,7 @@ const en: Record<string, string> = {
 
   "tools.grammarChecker.title": "Grammar Checker",
   "tools.grammarChecker.desc": "Check your text for grammar, spelling, and punctuation errors instantly.",
-  "tools.plagiarismChecker.title": "Plagiarism Checker",
-  "tools.plagiarismChecker.desc": "Check your text for potential plagiarism with our advanced tool.",
+
   "tools.textRewriter.title": "Text Rewriter",
   "tools.textRewriter.desc": "Rewrite and paraphrase your text to improve clarity, style, and originality.",
   "tools.keywordDensity.title": "Keyword Density Analyzer",
@@ -156,18 +155,6 @@ const en: Record<string, string> = {
   "gc.faq.a3": "Yes, our grammar checker is completely free. There are no usage limits or registration requirements.",
   "gc.faq.q4": "What types of errors does it detect?",
   "gc.faq.a4": "It detects grammar errors, spelling mistakes, punctuation issues, and style improvements. It also provides suggestions to enhance your writing quality.",
-
-  "pc2.h1": "Free Plagiarism Checker",
-  "pc2.desc": "Check your text for potential plagiarism against billions of web sources. Ensure your content is original and properly cited.",
-  "pc2.seo": "Free online plagiarism checker. Check your text for plagiarism against billions of sources. Ensure content originality.",
-  "pc2.faq.q1": "How does the plagiarism checker work?",
-  "pc2.faq.a1": "Our plagiarism checker compares your text against billions of web pages and academic sources to identify potential matches and unoriginal content.",
-  "pc2.faq.q2": "Is my text stored?",
-  "pc2.faq.a2": "Your text is processed in real-time and is not stored on our servers. Your privacy is our priority.",
-  "pc2.faq.q3": "What percentage is considered plagiarism?",
-  "pc2.faq.a3": "Generally, anything above 15% similarity may require citation. However, acceptable plagiarism levels vary by institution and context.",
-  "pc2.faq.q4": "Is there a text limit?",
-  "pc2.faq.a4": "You can check texts of any length. However, very long texts may take longer to process.",
 
   "tr.h1": "Free Text Rewriter",
   "tr.desc": "Rewrite and paraphrase your text with one click. Improve clarity, change tone, and make your content unique.",
