@@ -29,7 +29,7 @@ src/
     sitemap.ts   # Sitemap.xml
   components/    # Reusable components
   hooks/         # Custom React hooks
-  lib/           # Utilities (stats, SEO, schema)
+  lib/           # Utilities, i18n, schema, SEO
   app/globals.css
 ```
 
@@ -43,16 +43,14 @@ src/
 ## Architecture Notes
 - Server Components for layout/page shells
 - Client Components for interactive tool interfaces
-- text processing runs entirely client-side
+- Text processing runs entirely client-side
 - localStorage for auto-save
 - Dark mode support via CSS custom properties
 - SEO: metadata, OG, Twitter cards, canonical, robots.txt, sitemap.xml, FAQ/breadcrumb schema
-- AdSense-ready with <AdBanner /> placeholders
+- AdSense-ready with <AdBanner /> placeholders returning null
 
 ## Deployment (Vercel)
 1. Push to GitHub
 2. Import repo at https://vercel.com/new
-3. Framework: Next.js
-4. Deploy
-
-No environment variables needed.
+3. Framework: Next.js (auto-detected)
+4. Deploy — no env vars needed

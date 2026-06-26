@@ -7,12 +7,11 @@ import { useLanguage } from "./LanguageProvider";
 import { languages } from "@/lib/i18n";
 import MegaMenu from "./MegaMenu";
 import { categories } from "@/lib/navigation";
-import { useAuth } from "./AuthProvider";
+
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const { lang, setLang, t } = useLanguage();
-  const { user, logout } = useAuth();
   const [langOpen, setLangOpen] = useState(false);
 
   return (
@@ -68,32 +67,7 @@ export default function Header() {
               </>
             )}
           </div>
-          {user ? (
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-text-secondary">{user.username}</span>
-              <button
-                onClick={logout}
-                className="px-3 py-1.5 text-xs font-medium rounded-lg text-text-secondary hover:bg-bg-tertiary transition-colors"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <>
-              <Link
-                href="/login"
-                className="px-3 py-1.5 text-xs font-medium rounded-lg text-text-secondary hover:bg-bg-tertiary transition-colors"
-              >
-                {t("nav.login")}
-              </Link>
-              <Link
-                href="/register"
-                className="px-3 py-1.5 text-xs font-medium rounded-lg bg-primary text-white hover:bg-primary-dark transition-colors"
-              >
-                {t("nav.register")}
-              </Link>
-            </>
-          )}
+
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg text-text-secondary hover:bg-bg-tertiary transition-colors"

@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
-import { AuthProvider } from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -75,14 +74,12 @@ export default function RootLayout({
       <body className="bg-bg text-text min-h-screen flex flex-col" suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider>
-            <AuthProvider>
             <div className="bg-primary text-white text-center text-xs sm:text-sm py-2 px-4 font-medium">
               Powerful text analysis and writing tools to help writers, students, marketers, and creators work smarter and write better.
             </div>
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
-          </AuthProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>
