@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import ToolPageContent from "@/components/ToolPageContent";
 
 export const metadata: Metadata = {
-  title: "Reading Time Calculator - Calculate Reading Time | TextToolsHub",
+  title: "Reading Time Calculator - Free Online Reading Time Tool",
   description:
     "Free online reading time calculator. Estimate how long it takes to read any text. Perfect for bloggers, writers, editors, and content creators.",
   openGraph: {
-    title: "Reading Time Calculator - Calculate Reading Time | TextToolsHub",
+    title: "Reading Time Calculator - Free Online Reading Time Tool",
     description:
       "Free online reading time calculator. Estimate reading time for any text.",
     url: "https://texttoolshub.com/reading-time-calculator",
   },
   twitter: {
-    title: "Reading Time Calculator - Calculate Reading Time | TextToolsHub",
+    title: "Reading Time Calculator - Free Online Reading Time Tool",
     description:
       "Free online reading time calculator. Estimate reading time for any text.",
   },

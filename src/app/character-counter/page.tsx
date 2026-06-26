@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import ToolPageContent from "@/components/ToolPageContent";
 
 export const metadata: Metadata = {
-  title: "Character Counter - Count Characters Online | TextToolsHub",
+  title: "Character Counter - Free Online Character Counter Tool",
   description:
     "Free online character counter tool. Count characters with and without spaces. Ideal for tweets, bios, meta descriptions, SMS, and character-limited content.",
   openGraph: {
-    title: "Character Counter - Count Characters Online | TextToolsHub",
+    title: "Character Counter - Free Online Character Counter Tool",
     description:
       "Free online character counter tool. Count characters with and without spaces.",
     url: "https://texttoolshub.com/character-counter",
   },
   twitter: {
-    title: "Character Counter - Count Characters Online | TextToolsHub",
+    title: "Character Counter - Free Online Character Counter Tool",
     description:
       "Free online character counter tool. Count characters with and without spaces.",
   },

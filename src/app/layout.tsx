@@ -6,10 +6,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Free Online Word Counter Tool",
-    template: "%s | Free Online Word Counter Tool",
-  },
+  title: "Free Online Word Counter Tool",
   description:
     "Free online text analysis tools. Count words, characters, sentences, paragraphs, and calculate reading time. Fast, accurate, and privacy-focused.",
   keywords: [

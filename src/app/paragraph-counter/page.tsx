@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import ToolPageContent from "@/components/ToolPageContent";
 
 export const metadata: Metadata = {
-  title: "Paragraph Counter - Count Paragraphs Online | TextToolsHub",
+  title: "Paragraph Counter - Free Online Paragraph Counter Tool",
   description:
     "Free online paragraph counter tool. Count paragraphs in your text instantly. Organize your content, maintain proper structure, and improve readability.",
   openGraph: {
-    title: "Paragraph Counter - Count Paragraphs Online | TextToolsHub",
+    title: "Paragraph Counter - Free Online Paragraph Counter Tool",
     description:
       "Free online paragraph counter tool. Count paragraphs in any text instantly.",
     url: "https://texttoolshub.com/paragraph-counter",
   },
   twitter: {
-    title: "Paragraph Counter - Count Paragraphs Online | TextToolsHub",
+    title: "Paragraph Counter - Free Online Paragraph Counter Tool",
     description:
       "Free online paragraph counter tool. Count paragraphs in any text instantly.",
   },

@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
 
 export const metadata: Metadata = {
-  title: {
-    default: "TextToolsHub - Free Online Text Analysis Tools",
-    template: "%s | TextToolsHub",
-  },
+  title: "Free Online Word Counter Tool",
   description:
     "Free online text analysis tools. Count words, characters, sentences, paragraphs, and calculate reading time. Fast, accurate, and privacy-focused.",
   keywords: [

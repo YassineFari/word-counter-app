@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import ToolPageContent from "@/components/ToolPageContent";
 
 export const metadata: Metadata = {
-  title: "Sentence Counter - Count Sentences Online | TextToolsHub",
+  title: "Sentence Counter - Free Online Sentence Counter Tool",
   description:
     "Free online sentence counter tool. Instantly count the number of sentences in your text. Improve your writing structure, readability, and flow.",
   openGraph: {
-    title: "Sentence Counter - Count Sentences Online | TextToolsHub",
+    title: "Sentence Counter - Free Online Sentence Counter Tool",
     description:
       "Free online sentence counter tool. Instantly count sentences in any text.",
     url: "https://texttoolshub.com/sentence-counter",
   },
   twitter: {
-    title: "Sentence Counter - Count Sentences Online | TextToolsHub",
+    title: "Sentence Counter - Free Online Sentence Counter Tool",
     description:
       "Free online sentence counter tool. Instantly count sentences in any text.",
   },

@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import ToolPageContent from "@/components/ToolPageContent";
 
 export const metadata: Metadata = {
-  title: "Word Counter - Count Words Online | TextToolsHub",
+  title: "Word Counter - Free Online Word Counter Tool",
   description:
     "Free online word counter tool. Count the number of words in your text instantly. Perfect for essays, articles, social media posts, and more. Fast, accurate, and private.",
   openGraph: {
-    title: "Word Counter - Count Words Online | TextToolsHub",
+    title: "Word Counter - Free Online Word Counter Tool",
     description:
       "Free online word counter tool. Count words instantly in any text.",
     url: "https://texttoolshub.com/word-counter",
   },
   twitter: {
-    title: "Word Counter - Count Words Online | TextToolsHub",
+    title: "Word Counter - Free Online Word Counter Tool",
     description:
       "Free online word counter tool. Count words instantly in any text.",
   },
