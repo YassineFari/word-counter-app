@@ -7,8 +7,8 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 
 export const metadata: Metadata = {
   title: {
-    default: "TextToolsHub - Free Online Text Analysis Tools",
-    template: "%s | TextToolsHub",
+    default: "Free Online Word Counter Tool",
+    template: "%s | Free Online Word Counter Tool",
   },
   description:
     "Free online text analysis tools. Count words, characters, sentences, paragraphs, and calculate reading time. Fast, accurate, and privacy-focused.",
