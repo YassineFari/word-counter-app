@@ -74,8 +74,8 @@ export default function RootLayout({
       <body className="bg-bg text-text min-h-screen flex flex-col" suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider>
-            <div className="bg-primary text-white text-center text-xs sm:text-sm py-2 px-4 font-medium">
-              Powerful text analysis and writing tools to help writers, students, marketers, and creators work smarter and write better.
+            <div className="bg-primary text-white text-center text-sm sm:text-base md:text-lg py-3 px-4 font-bold tracking-wide animate-pulse">
+              ✨ Analyze, improve, and optimize your text in seconds. 100% free, no account required, and ready to use instantly.
             </div>
             <Header />
             <main className="flex-1">{children}</main>
