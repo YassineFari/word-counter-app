@@ -7,7 +7,7 @@ import ToolLayout from "@/components/ToolLayout";
 import FAQSection from "@/components/FAQSection";
 import RelatedTools from "@/components/RelatedTools";
 import { rewriteText } from "@/lib/utils";
-import { rewriteWithAI } from "@/lib/gemini";
+import { rewriteWithAI, isGeminiAvailable } from "@/lib/gemini";
 import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 
 export default function TextRewriterForm() {
@@ -15,8 +15,9 @@ export default function TextRewriterForm() {
   const [text, setText] = useState("");
   const [rewritten, setRewritten] = useState("");
   const [rewriting, setRewriting] = useState(false);
-  const [mode, setMode] = useState<"ai" | "synonym">("ai");
+  const [mode, setMode] = useState<"ai" | "synonym">(isGeminiAvailable() ? "ai" : "synonym");
   const [intensity, setIntensity] = useState<"light" | "medium" | "strong">("medium");
+  const aiReady = isGeminiAvailable();
 
   const handleRewrite = async () => {
     if (!text.trim()) return;
@@ -86,6 +87,12 @@ export default function TextRewriterForm() {
                 </button>
               ))}
             </div>
+            <span className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-medium ${
+              aiReady ? "bg-emerald-500/10 text-emerald-500" : "bg-amber-500/10 text-amber-500"
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${aiReady ? "bg-emerald-500" : "bg-amber-500"}`} />
+              {aiReady ? "AI Ready" : "No API Key"}
+            </span>
             <button
               onClick={handleRewrite}
               disabled={!text.trim() || rewriting}

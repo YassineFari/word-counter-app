@@ -1,6 +1,10 @@
 const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || "";
 const MODEL = "gemini-2.0-flash";
 
+export function isGeminiAvailable(): boolean {
+  return !!API_KEY;
+}
+
 async function callGemini(prompt: string): Promise<string> {
   if (!API_KEY) throw new Error("Gemini API key not configured");
   const res = await fetch(
