@@ -6,7 +6,6 @@ import TextEditor from "@/components/TextEditor";
 import ToolLayout from "@/components/ToolLayout";
 import FAQSection from "@/components/FAQSection";
 import RelatedTools from "@/components/RelatedTools";
-import { rewriteText } from "@/lib/utils";
 import { rewriteWithAI, isGeminiAvailable } from "@/lib/gemini";
 import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 
@@ -15,7 +14,6 @@ export default function TextRewriterForm() {
   const [text, setText] = useState("");
   const [rewritten, setRewritten] = useState("");
   const [rewriting, setRewriting] = useState(false);
-  const [mode, setMode] = useState<"ai" | "synonym">(isGeminiAvailable() ? "ai" : "synonym");
   const [intensity, setIntensity] = useState<"light" | "medium" | "strong">("medium");
   const aiReady = isGeminiAvailable();
 
@@ -23,14 +21,9 @@ export default function TextRewriterForm() {
     if (!text.trim()) return;
     setRewriting(true);
     try {
-      if (mode === "ai") {
-        setRewritten(await rewriteWithAI(text, intensity));
-      } else {
-        setRewritten(await rewriteText(text, intensity));
-      }
+      setRewritten(await rewriteWithAI(text, intensity));
     } catch {
-      const fallback = await rewriteText(text, intensity);
-      setRewritten(fallback);
+      setRewritten("AI rewrite unavailable. Please check your API key configuration.");
     }
     setRewriting(false);
   };
@@ -55,22 +48,6 @@ export default function TextRewriterForm() {
         <div className="space-y-6">
           <TextEditor text={text} onChange={setText} onClear={() => { setText(""); setRewritten(""); }} onCopy={() => navigator.clipboard.writeText(text)} />
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-text-secondary font-medium">Mode:</span>
-              {(["ai", "synonym"] as const).map((opt) => (
-                <button
-                  key={opt}
-                  onClick={() => setMode(opt)}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors ${
-                    mode === opt
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border text-text-secondary hover:bg-bg-tertiary"
-                  }`}
-                >
-                  {opt === "ai" ? "AI Rewrite" : "Synonym Swap"}
-                </button>
-              ))}
-            </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-text-secondary font-medium">Intensity:</span>
               {(["light", "medium", "strong"] as const).map((opt) => (
@@ -103,7 +80,7 @@ export default function TextRewriterForm() {
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   Rewriting...
                 </span>
-              ) : "Rewrite Text"}
+              ) : "Rewrite with AI"}
             </button>
           </div>
           {rewritten && (
