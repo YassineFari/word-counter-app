@@ -11,8 +11,14 @@ export const metadata: Metadata = {
     "sentence counter",
     "paragraph counter",
     "reading time calculator",
+    "grammar checker",
+    "text rewriter",
+    "keyword density analyzer",
+    "meta description analyzer",
+    "readability score",
     "text tools",
     "writing tools",
+    "seo tools",
   ],
   openGraph: {
     title: "TextToolsHub - Free Online Text Analysis Tools",
@@ -86,6 +92,66 @@ const tools = [
     icon: (
       <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: "tools.grammarChecker.title",
+    descKey: "tools.grammarChecker.desc",
+    href: "/grammar-checker",
+    icon: (
+      <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: "tools.plagiarismChecker.title",
+    descKey: "tools.plagiarismChecker.desc",
+    href: "/plagiarism-checker",
+    icon: (
+      <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: "tools.textRewriter.title",
+    descKey: "tools.textRewriter.desc",
+    href: "/text-rewriter",
+    icon: (
+      <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: "tools.keywordDensity.title",
+    descKey: "tools.keywordDensity.desc",
+    href: "/keyword-density-analyzer",
+    icon: (
+      <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: "tools.metaDescAnalyzer.title",
+    descKey: "tools.metaDescAnalyzer.desc",
+    href: "/meta-description-analyzer",
+    icon: (
+      <svg className="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    ),
+  },
+  {
+    titleKey: "tools.readabilityScore.title",
+    descKey: "tools.readabilityScore.desc",
+    href: "/readability-score",
+    icon: (
+      <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
   },

@@ -80,3 +80,187 @@ export function debounce<T extends (...args: unknown[]) => void>(
 export function generateId(): string {
   return Math.random().toString(36).substring(2, 9);
 }
+
+// --- Keyword Density ---
+export interface KeywordDensityEntry {
+  word: string;
+  count: number;
+  density: number;
+}
+
+export function getKeywordDensity(text: string): KeywordDensityEntry[] {
+  if (!text.trim()) return [];
+  const words = text.toLowerCase().match(/\b\w+\b/g);
+  if (!words) return [];
+  const total = words.length;
+  const freq: Record<string, number> = {};
+  const stopWords = new Set([
+    "the","a","an","and","or","but","in","on","at","to","for","of","by","with",
+    "from","as","is","was","are","were","be","been","being","have","has","had",
+    "do","does","did","will","would","could","should","may","might","shall",
+    "can","this","that","these","those","it","its","they","them","he","she",
+    "we","you","i","me","my","your","his","her","our","their","not","no",
+    "so","if","than","then","up","out","about","into","over","after","before",
+    "between","under","again","further","once","here","there","when","where",
+    "why","how","all","each","every","both","few","more","most","some","any",
+  ]);
+  for (const w of words) {
+    if (w.length < 3 || stopWords.has(w)) continue;
+    freq[w] = (freq[w] || 0) + 1;
+  }
+  return Object.entries(freq)
+    .map(([word, count]) => ({ word, count, density: +(count / total * 100).toFixed(2) }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 50);
+}
+
+// --- Readability ---
+function countSyllables(word: string): number {
+  word = word.toLowerCase().replace(/[^a-z]/g, "");
+  if (!word) return 0;
+  if (word.length <= 3) return 1;
+  const vowels = "aeiouy";
+  let count = 0;
+  let prevVowel = false;
+  for (const ch of word) {
+    const isVowel = vowels.includes(ch);
+    if (isVowel && !prevVowel) count++;
+    prevVowel = isVowel;
+  }
+  if (word.endsWith("e")) count--;
+  if (word.endsWith("le") && word.length > 2) count++;
+  if (word.endsWith("es") || word.endsWith("ed")) count--;
+  return Math.max(1, count);
+}
+
+export function calculateFleschReadingEase(text: string): number {
+  const words = text.trim().match(/\b\w+\b/g);
+  const sentences = text.match(/[.!?]+/g);
+  if (!words || words.length < 2 || !sentences) return 0;
+  const totalSyllables = words.reduce((s, w) => s + countSyllables(w), 0);
+  const avgSyllables = totalSyllables / words.length;
+  const avgWordsPerSentence = words.length / sentences.length;
+  return Math.max(0, Math.min(100, 206.835 - 1.015 * avgWordsPerSentence - 84.6 * avgSyllables));
+}
+
+export function calculateFleschKincaidGrade(text: string): number {
+  const words = text.trim().match(/\b\w+\b/g);
+  const sentences = text.match(/[.!?]+/g);
+  if (!words || words.length < 2 || !sentences) return 0;
+  const totalSyllables = words.reduce((s, w) => s + countSyllables(w), 0);
+  const avgSyllables = totalSyllables / words.length;
+  const avgWordsPerSentence = words.length / sentences.length;
+  return Math.round((0.39 * avgWordsPerSentence + 11.8 * avgSyllables - 15.59) * 10) / 10;
+}
+
+export function getReadabilityLabel(score: number): string {
+  if (score >= 90) return "Very Easy";
+  if (score >= 80) return "Easy";
+  if (score >= 70) return "Fairly Easy";
+  if (score >= 60) return "Standard";
+  if (score >= 50) return "Fairly Difficult";
+  if (score >= 30) return "Difficult";
+  return "Very Difficult";
+}
+
+export function getReadabilityGradeLabel(grade: number): string {
+  if (grade <= 1) return "Kindergarten";
+  if (grade <= 2) return "1st-2nd Grade";
+  if (grade <= 3) return "3rd Grade";
+  if (grade <= 5) return "4th-5th Grade";
+  if (grade <= 7) return "6th-7th Grade";
+  if (grade <= 9) return "8th-9th Grade";
+  if (grade <= 12) return "10th-12th Grade";
+  if (grade <= 15) return "College";
+  return "College Graduate";
+}
+
+// --- Grammar Check ---
+export interface GrammarIssue {
+  type: string;
+  message: string;
+  offset: number;
+  length: number;
+  replacements: string[];
+}
+
+export async function checkGrammar(text: string): Promise<GrammarIssue[]> {
+  if (!text.trim()) return [];
+  try {
+    const res = await fetch("https://api.languagetool.org/v2/check", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ text, language: "en-US" }),
+    });
+    const data = await res.json();
+    return (data.matches || []).map((m: { rule?: { issueType?: string }; message?: string; offset?: number; length?: number; replacements?: { value?: string }[] }) => ({
+      type: m.rule?.issueType || "style",
+      message: m.message || "Unknown issue",
+      offset: m.offset ?? 0,
+      length: m.length ?? 0,
+      replacements: (m.replacements || []).slice(0, 5).map((r: { value?: string }) => r.value || ""),
+    }));
+  } catch {
+    return [{ type: "error", message: "Grammar check service unavailable. Please try again.", offset: 0, length: 0, replacements: [] }];
+  }
+}
+
+// --- Text Rewriter (synonym replacement) ---
+const synonyms: Record<string, string[]> = {
+  good: ["excellent", "superb", "outstanding", "remarkable", "exceptional"],
+  bad: ["poor", "terrible", "awful", "dreadful", "inferior"],
+  big: ["large", "enormous", "massive", "immense", "substantial"],
+  small: ["tiny", "compact", "miniature", "petite", "diminutive"],
+  happy: ["delighted", "joyful", "cheerful", "content", "pleased"],
+  sad: ["unhappy", "sorrowful", "gloomy", "melancholy", "downcast"],
+  important: ["crucial", "vital", "essential", "significant", "critical"],
+  beautiful: ["gorgeous", "stunning", "magnificent", "breathtaking", "splendid"],
+  fast: ["quick", "rapid", "swift", "speedy", "brisk"],
+  slow: ["leisurely", "gradual", "sluggish", "unhurried", "gentle"],
+  easy: ["simple", "effortless", "straightforward", "uncomplicated", "painless"],
+  hard: ["difficult", "challenging", "demanding", "arduous", "strenuous"],
+  new: ["fresh", "novel", "modern", "current", "latest"],
+  old: ["ancient", "aged", "mature", "vintage", "antique"],
+  strong: ["powerful", "robust", "sturdy", "durable", "resilient"],
+  weak: ["feeble", "fragile", "delicate", "frail", "faint"],
+  smart: ["intelligent", "clever", "brilliant", "sharp", "wise"],
+  funny: ["hilarious", "amusing", "comical", "entertaining", "witty"],
+  nice: ["pleasant", "lovely", "delightful", "charming", "agreeable"],
+  strange: ["unusual", "peculiar", "odd", "curious", "bizarre"],
+  interesting: ["fascinating", "captivating", "engaging", "intriguing", "compelling"],
+  great: ["fantastic", "wonderful", "marvelous", "splendid", "magnificent"],
+  change: ["modify", "adjust", "alter", "transform", "revise"],
+  help: ["assist", "support", "aid", "facilitate", "guide"],
+  make: ["create", "produce", "craft", "develop", "construct"],
+  use: ["utilize", "employ", "apply", "operate", "leverage"],
+  get: ["obtain", "acquire", "secure", "attain", "receive"],
+  show: ["display", "demonstrate", "exhibit", "reveal", "present"],
+  think: ["believe", "consider", "reflect", "ponder", "contemplate"],
+  need: ["require", "necessitate", "demand", "call for"],
+  want: ["desire", "wish", "aspire", "yearn", "long for"],
+  give: ["provide", "offer", "supply", "grant", "bestow"],
+  take: ["seize", "grasp", "capture", "claim", "acquire"],
+  find: ["discover", "locate", "uncover", "detect", "identify"],
+  tell: ["inform", "notify", "advise", "reveal", "disclose"],
+  try: ["attempt", "endeavor", "strive", "undertake", "essay"],
+  start: ["begin", "commence", "initiate", "launch", "embark"],
+  end: ["finish", "conclude", "terminate", "complete", "cease"],
+  keep: ["retain", "maintain", "preserve", "sustain", "continue"],
+};
+
+export function rewriteText(text: string, intensity: "light" | "medium" | "strong"): string {
+  if (!text.trim()) return "";
+  const rate = intensity === "light" ? 0.3 : intensity === "medium" ? 0.5 : 0.7;
+  const words = text.split(/(\b\w+\b)/g);
+  return words.map((w) => {
+    const lower = w.toLowerCase();
+    const syns = synonyms[lower];
+    if (syns && Math.random() < rate) {
+      const pick = syns[Math.floor(Math.random() * syns.length)];
+      return w[0] === w[0]?.toUpperCase()
+        ? pick.charAt(0).toUpperCase() + pick.slice(1)
+        : pick;
+    }
+    return w;
+  }).join("");
+}
