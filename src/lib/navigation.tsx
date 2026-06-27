@@ -106,6 +106,17 @@ export const categories: NavCategory[] = [
         ),
       },
       {
+        id: "text-to-slug",
+        nameKey: "tools.textToSlug.title",
+        descKey: "tools.textToSlug.desc",
+        href: "/text-to-slug",
+        icon: (
+          <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+        ),
+      },
+      {
         id: "case-converter",
         nameKey: "tools.caseConverter.title",
         descKey: "tools.caseConverter.desc",

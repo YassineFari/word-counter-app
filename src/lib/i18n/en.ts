@@ -33,6 +33,8 @@ const en: Record<string, string> = {
   "tools.wordFrequency.desc": "Count how many times each word appears in your text.",
   "tools.removeDuplicates.title": "Remove Duplicate Lines",
   "tools.removeDuplicates.desc": "Remove duplicate lines and clean up your text.",
+  "tools.textToSlug.title": "Text to Slug Generator",
+  "tools.textToSlug.desc": "Convert titles and text into clean URL slugs.",
 
 
   "seo.heading": "Why Use TextToolsHub?",
@@ -203,6 +205,32 @@ const en: Record<string, string> = {
   "rd.faq.a4": "After removing duplicates, the remaining lines are sorted alphabetically. This makes it easier to browse and find specific lines in large text blocks.",
   "rd.faq.q5": "Is my text stored or shared?",
   "rd.faq.a5": "No. All processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
+
+  "slug.h1": "Text to Slug Generator",
+  "slug.desc": "Convert any text or title into a clean, SEO-friendly URL slug. Choose your separator, toggle lowercase, remove numbers, and set max length. Supports single and bulk conversion.",
+  "slug.seo": "Free online text to slug generator. Create SEO-friendly URL slugs from titles and text. Supports hyphens, underscores, bulk conversion, and more. All processing is done locally in your browser.",
+  "slug.single": "Single",
+  "slug.bulk": "Bulk",
+  "slug.separator": "Separator:",
+  "slug.lowercase": "Lowercase",
+  "slug.removeNumbers": "Remove numbers",
+  "slug.maxLength": "Max length:",
+  "slug.inputPlaceholder": "Enter a title or text to convert to a slug...",
+  "slug.generatedSlug": "Generated Slug",
+  "slug.emptySlug": "Your slug will appear here...",
+  "slug.bulkPlaceholder": "Enter one title per line...",
+  "slug.tableTitle": "Original Title",
+  "slug.tableSlug": "Generated Slug",
+  "slug.faq.q1": "What is a URL slug?",
+  "slug.faq.a1": "A URL slug is the part of a URL that identifies a specific page in a human-readable format. For example, in 'example.com/my-blog-post', 'my-blog-post' is the slug.",
+  "slug.faq.q2": "Why are slugs important for SEO?",
+  "slug.faq.a2": "SEO-friendly slugs help search engines understand your content and improve click-through rates. Clean, descriptive slugs with relevant keywords rank better in search results.",
+  "slug.faq.q3": "Should I use hyphens or underscores in slugs?",
+  "slug.faq.a3": "Hyphens (-) are recommended over underscores (_) for URL slugs. Google treats hyphens as word separators but underscores join words together, making hyphens more readable.",
+  "slug.faq.q4": "How long should a URL slug be?",
+  "slug.faq.a4": "A good URL slug should be short and descriptive, ideally 3-5 words (50-60 characters). Keep it concise while including relevant keywords for SEO.",
+  "slug.faq.q5": "Is my text stored or shared?",
+  "slug.faq.a5": "No. All processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
 
 };
 

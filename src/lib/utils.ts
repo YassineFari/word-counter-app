@@ -220,6 +220,39 @@ export function removeDuplicateLines(
   };
 }
 
+// --- Slug Generation ---
+export function toSlug(
+  text: string,
+  options: {
+    separator: "-" | "_";
+    lowercase: boolean;
+    removeNumbers: boolean;
+    maxLength: number;
+  }
+): string {
+  let slug = text.trim();
+  if (!slug) return "";
+
+  if (options.lowercase) {
+    slug = slug.toLowerCase();
+  }
+
+  if (options.removeNumbers) {
+    slug = slug.replace(/[0-9]/g, "");
+  }
+
+  slug = slug.replace(/[^a-z0-9\s-]/gi, "");
+  slug = slug.replace(/[\s-]+/g, options.separator);
+  slug = slug.replace(new RegExp(`^${options.separator}|${options.separator}$`, "g"), "");
+
+  if (options.maxLength > 0 && slug.length > options.maxLength) {
+    slug = slug.slice(0, options.maxLength);
+    slug = slug.replace(new RegExp(`${options.separator}$`), "");
+  }
+
+  return slug;
+}
+
 export function getWordFrequency(
   text: string,
   excludeStopWords = false
