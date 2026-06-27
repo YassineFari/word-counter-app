@@ -95,36 +95,6 @@ const tools = [
       </svg>
     ),
   },
-  {
-    titleKey: "tools.keywordDensity.title",
-    descKey: "tools.keywordDensity.desc",
-    href: "/keyword-density-analyzer",
-    icon: (
-      <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-      </svg>
-    ),
-  },
-  {
-    titleKey: "tools.metaDescAnalyzer.title",
-    descKey: "tools.metaDescAnalyzer.desc",
-    href: "/meta-description-analyzer",
-    icon: (
-      <svg className="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    ),
-  },
-  {
-    titleKey: "tools.readabilityScore.title",
-    descKey: "tools.readabilityScore.desc",
-    href: "/readability-score",
-    icon: (
-      <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-  },
 ];
 
 const faqItems = [
