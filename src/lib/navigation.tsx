@@ -76,6 +76,13 @@ export const categories: NavCategory[] = [
           </svg>
         ),
       },
+    ],
+  },
+  {
+    id: "case-converter",
+    titleKey: "nav.category.caseConverter",
+    emoji: "🔤",
+    tools: [
       {
         id: "case-converter",
         nameKey: "tools.caseConverter.title",

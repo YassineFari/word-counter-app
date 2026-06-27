@@ -5,6 +5,7 @@ const en: Record<string, string> = {
   "nav.category.textAnalysis": "Text Analysis",
   "nav.category.writingTools": "Writing Tools",
   "nav.category.seoTools": "SEO Tools",
+  "nav.category.caseConverter": "Case Converter",
   "nav.wordCounter": "Word Counter",
   "nav.characterCounter": "Character Counter",
   "nav.readingTime": "Reading Time",

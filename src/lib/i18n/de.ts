@@ -3,6 +3,7 @@ const de: Record<string, string> = {
   "site.description": "Kostenlose Online-Textanalyse-Tools. Zählen Sie Wörter, Zeichen, Sätze, Absätze und berechnen Sie die Lesezeit. Schnell, genau und datenschutzfreundlich.",
 
   "nav.category.textAnalysis": "Textanalyse",
+  "nav.category.caseConverter": "Textumwandler",
   "nav.wordCounter": "Wortzähler",
   "nav.characterCounter": "Zeichenzähler",
   "nav.readingTime": "Lesezeit",

@@ -3,6 +3,7 @@ const it: Record<string, string> = {
   "site.description": "Strumenti gratuiti di analisi del testo online. Conta parole, caratteri, frasi, paragrafi e calcola il tempo di lettura. Veloce, preciso e rispettoso della privacy.",
 
   "nav.category.textAnalysis": "Analisi del testo",
+  "nav.category.caseConverter": "Convertitore maiuscole",
   "nav.wordCounter": "Contaparole",
   "nav.characterCounter": "Contacaratteri",
   "nav.readingTime": "Tempo di lettura",
