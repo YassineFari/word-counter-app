@@ -90,8 +90,22 @@ export function toLowerCase(text: string): string {
   return text.toLowerCase();
 }
 
-export function toTitleCase(text: string): string {
+export function toCapitalizedCase(text: string): string {
   return text.replace(/\w\S*/g, (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+}
+
+export function toTitleCase(text: string): string {
+  const smallWords = new Set([
+    "a", "an", "the", "and", "or", "but", "in", "on", "at", "to",
+    "for", "of", "by", "with", "is", "are", "was", "were", "be",
+    "been", "being", "have", "has", "had", "do", "does", "did",
+    "nor", "not", "so", "yet", "as", "if", "than", "that",
+  ]);
+  return text.replace(/\w\S*/g, (word, offset) => {
+    const lower = word.toLowerCase();
+    if (offset !== 0 && smallWords.has(lower)) return lower;
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   });
 }
@@ -101,6 +115,29 @@ export function toSentenceCase(text: string): string {
   return lower.replace(/(?:^\s*\w|[.!?]\s*\w)/g, (match) =>
     match.toUpperCase()
   );
+}
+
+export function toAlternatingCase(text: string): string {
+  return text
+    .split("")
+    .map((char, i) => {
+      if (/[a-zA-Z]/.test(char)) {
+        return i % 2 === 0 ? char.toLowerCase() : char.toUpperCase();
+      }
+      return char;
+    })
+    .join("");
+}
+
+export function toInverseCase(text: string): string {
+  return text
+    .split("")
+    .map((char) => {
+      if (char >= "a" && char <= "z") return char.toUpperCase();
+      if (char >= "A" && char <= "Z") return char.toLowerCase();
+      return char;
+    })
+    .join("");
 }
 
 export function toCamelCase(text: string): string {

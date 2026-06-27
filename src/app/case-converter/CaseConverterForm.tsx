@@ -9,30 +9,40 @@ import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import {
   toUpperCase,
   toLowerCase,
+  toCapitalizedCase,
   toTitleCase,
   toSentenceCase,
-  toCamelCase,
-  toSnakeCase,
+  toAlternatingCase,
+  toInverseCase,
 } from "@/lib/utils";
 
-type CaseType = "upper" | "lower" | "title" | "sentence" | "camel" | "snake";
+type CaseType =
+  | "sentence"
+  | "lower"
+  | "upper"
+  | "capitalized"
+  | "alternating"
+  | "title"
+  | "inverse";
 
 const caseFunctions: Record<CaseType, (text: string) => string> = {
-  upper: toUpperCase,
-  lower: toLowerCase,
-  title: toTitleCase,
   sentence: toSentenceCase,
-  camel: toCamelCase,
-  snake: toSnakeCase,
+  lower: toLowerCase,
+  upper: toUpperCase,
+  capitalized: toCapitalizedCase,
+  alternating: toAlternatingCase,
+  title: toTitleCase,
+  inverse: toInverseCase,
 };
 
-const buttons: { id: CaseType; label: string; preview: string }[] = [
-  { id: "upper", label: "UPPER CASE", preview: "EXAMPLE" },
-  { id: "lower", label: "lower case", preview: "example" },
-  { id: "title", label: "Title Case", preview: "Example Text" },
-  { id: "sentence", label: "Sentence case", preview: "Example sentence." },
-  { id: "camel", label: "camelCase", preview: "exampleText" },
-  { id: "snake", label: "snake_case", preview: "example_text" },
+const buttons: { id: CaseType; abbr: string; label: string }[] = [
+  { id: "sentence", abbr: "Sc", label: "Sentence case" },
+  { id: "lower", abbr: "lc", label: "lower case" },
+  { id: "upper", abbr: "UC", label: "UPPER CASE" },
+  { id: "capitalized", abbr: "CC", label: "Capitalized Case" },
+  { id: "alternating", abbr: "aC", label: "aLtErNaTiNg cAsE" },
+  { id: "title", abbr: "TC", label: "Title Case" },
+  { id: "inverse", abbr: "iC", label: "InVeRsE CaSe" },
 ];
 
 interface FAQItem {
@@ -155,24 +165,24 @@ export default function CaseConverterForm({
               />
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="flex flex-wrap gap-2">
               {buttons.map((btn) => (
                 <button
                   key={btn.id}
                   onClick={() => handleConvert(btn.id)}
-                  className={`flex flex-col items-center justify-center gap-1 p-4 rounded-xl font-medium text-sm transition-all ${
+                  className={`flex flex-col items-center gap-0.5 px-3 py-2 rounded-lg text-xs font-medium transition-all min-w-[80px] flex-1 basis-[80px] ${
                     activeCase === btn.id
-                      ? "bg-primary text-white shadow-md"
+                      ? "bg-primary text-white shadow-sm"
                       : "border border-border bg-bg text-text hover:bg-bg-tertiary"
                   }`}
                 >
-                  <span>{btn.label}</span>
+                  <span className="text-sm font-bold">{btn.abbr}</span>
                   <span
-                    className={`text-xs ${
+                    className={`text-[10px] leading-tight ${
                       activeCase === btn.id ? "text-white/70" : "text-text-muted"
                     }`}
                   >
-                    {btn.preview}
+                    {btn.label}
                   </span>
                 </button>
               ))}
