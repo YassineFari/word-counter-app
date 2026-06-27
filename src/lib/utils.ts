@@ -225,7 +225,7 @@ export function toSlug(
   text: string,
   options: {
     separator: "-" | "_";
-    lowercase: boolean;
+    caseOption: "lower" | "upper" | "preserve";
     removeNumbers: boolean;
     maxLength: number;
   }
@@ -233,15 +233,17 @@ export function toSlug(
   let slug = text.trim();
   if (!slug) return "";
 
-  if (options.lowercase) {
+  if (options.caseOption === "lower") {
     slug = slug.toLowerCase();
+  } else if (options.caseOption === "upper") {
+    slug = slug.toUpperCase();
   }
 
   if (options.removeNumbers) {
     slug = slug.replace(/[0-9]/g, "");
   }
 
-  slug = slug.replace(/[^a-z0-9\s-]/gi, "");
+  slug = slug.replace(/[^a-zA-Z0-9\s-]/g, "");
   slug = slug.replace(/[\s-]+/g, options.separator);
   slug = slug.replace(new RegExp(`^${options.separator}|${options.separator}$`, "g"), "");
 

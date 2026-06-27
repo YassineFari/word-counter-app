@@ -213,6 +213,8 @@ const en: Record<string, string> = {
   "slug.bulk": "Bulk",
   "slug.separator": "Separator:",
   "slug.lowercase": "Lowercase",
+  "slug.uppercase": "Uppercase",
+  "slug.preserveCase": "Preserve Case",
   "slug.removeNumbers": "Remove numbers",
   "slug.maxLength": "Max length:",
   "slug.inputPlaceholder": "Enter a title or text to convert to a slug...",

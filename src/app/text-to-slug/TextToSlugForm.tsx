@@ -10,7 +10,7 @@ import { toSlug } from "@/lib/utils";
 
 interface SlugOptions {
   separator: "-" | "_";
-  lowercase: boolean;
+  caseOption: "lower" | "upper" | "preserve";
   removeNumbers: boolean;
   maxLength: number;
 }
@@ -27,7 +27,7 @@ export default function TextToSlugForm({ faqItems }: { faqItems: FAQItem[] }) {
   const [bulkInput, setBulkInput] = useState("");
   const [options, setOptions] = useState<SlugOptions>({
     separator: "-",
-    lowercase: true,
+    caseOption: "lower",
     removeNumbers: false,
     maxLength: 0,
   });
@@ -139,15 +139,25 @@ export default function TextToSlugForm({ faqItems }: { faqItems: FAQItem[] }) {
                   <option value="_">_ (underscore)</option>
                 </select>
               </div>
-              <label className="flex items-center gap-2 text-sm text-text cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={options.lowercase}
-                  onChange={(e) => updateOption("lowercase", e.target.checked)}
-                  className="accent-[var(--color-primary)] w-4 h-4"
-                />
-                {t("slug.lowercase")}
-              </label>
+              <div className="flex items-center gap-1.5 bg-bg border border-border rounded-lg p-1">
+                {(["lower", "upper", "preserve"] as const).map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => updateOption("caseOption", opt)}
+                    className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                      options.caseOption === opt
+                        ? "bg-primary text-white"
+                        : "text-text-secondary hover:text-text"
+                    }`}
+                  >
+                    {opt === "lower"
+                      ? t("slug.lowercase")
+                      : opt === "upper"
+                      ? t("slug.uppercase")
+                      : t("slug.preserveCase")}
+                  </button>
+                ))}
+              </div>
               <label className="flex items-center gap-2 text-sm text-text cursor-pointer select-none">
                 <input
                   type="checkbox"
