@@ -182,7 +182,7 @@ export function removeDuplicateLines(
     sortLines: boolean;
   }
 ): RemoveDuplicateResult {
-  let lines = text.split("\n");
+  let lines = text.replace(/\r\n/g, "\n").split("\n");
   const totalLines = lines.length;
 
   if (options.trimWhitespace) {

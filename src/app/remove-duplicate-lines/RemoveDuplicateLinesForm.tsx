@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 import ToolLayout from "@/components/ToolLayout";
 import FAQSection from "@/components/FAQSection";
@@ -40,10 +40,7 @@ export default function RemoveDuplicateLinesForm({
     setOptions((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const result = useMemo(
-    () => removeDuplicateLines(input, options),
-    [input, options]
-  );
+  const result = removeDuplicateLines(input, options);
 
   const handleCopy = useCallback(async () => {
     if (!result.output) return;
