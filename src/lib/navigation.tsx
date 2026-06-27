@@ -79,6 +79,24 @@ export const categories: NavCategory[] = [
     ],
   },
   {
+    id: "security",
+    titleKey: "nav.category.security",
+    emoji: "🔒",
+    tools: [
+      {
+        id: "password-strength",
+        nameKey: "tools.passwordStrength.title",
+        descKey: "tools.passwordStrength.desc",
+        href: "/password-strength-checker",
+        icon: (
+          <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        ),
+      },
+    ],
+  },
+  {
     id: "case-converter",
     titleKey: "nav.category.caseConverter",
     emoji: "🔤",

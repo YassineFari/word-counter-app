@@ -384,6 +384,55 @@ export function getReadabilityGradeLabel(grade: number): string {
   return "College Graduate";
 }
 
+// --- Password Strength ---
+export interface PasswordStrengthResult {
+  score: number;
+  label: string;
+  color: string;
+  checks: {
+    length: boolean;
+    uppercase: boolean;
+    lowercase: boolean;
+    numbers: boolean;
+    symbols: boolean;
+  };
+  tips: string[];
+}
+
+export function checkPasswordStrength(password: string): PasswordStrengthResult {
+  const checks = {
+    length: password.length >= 8,
+    uppercase: /[A-Z]/.test(password),
+    lowercase: /[a-z]/.test(password),
+    numbers: /[0-9]/.test(password),
+    symbols: /[^a-zA-Z0-9]/.test(password),
+  };
+
+  const passed = Object.values(checks).filter(Boolean).length;
+  let score: number, label: string, color: string;
+
+  if (password.length === 0) {
+    score = 0; label = "None"; color = "bg-gray-500";
+  } else if (passed <= 1) {
+    score = 1; label = "Weak"; color = "bg-red-500";
+  } else if (passed === 2) {
+    score = 2; label = "Fair"; color = "bg-orange-500";
+  } else if (passed === 3) {
+    score = 3; label = "Strong"; color = "bg-yellow-500";
+  } else {
+    score = 4; label = "Very Strong"; color = "bg-green-500";
+  }
+
+  const tips: string[] = [];
+  if (!checks.length) tips.push("Use at least 8 characters");
+  if (!checks.uppercase) tips.push("Add an uppercase letter");
+  if (!checks.lowercase) tips.push("Add a lowercase letter");
+  if (!checks.numbers) tips.push("Add a number");
+  if (!checks.symbols) tips.push("Add a symbol (e.g. !@#$%)");
+
+  return { score, label, color, checks, tips };
+}
+
 // --- Grammar Check ---
 export interface GrammarIssue {
   type: string;

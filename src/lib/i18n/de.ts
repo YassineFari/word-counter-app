@@ -70,6 +70,8 @@ const de: Record<string, string> = {
   "stats.lines": "Zeilen",
   "stats.nonEmptyLines": "Nicht leere Zeilen",
   "stats.pages": "Seiten",
+  "tools.passwordStrength.title": "Passwortstärke-Prüfer",
+  "tools.passwordStrength.desc": "Überprüfen Sie sofort die Stärke Ihres Passworts.",
 };
 
 export default de;

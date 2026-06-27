@@ -70,6 +70,8 @@ const it: Record<string, string> = {
   "stats.lines": "Righe",
   "stats.nonEmptyLines": "Righe non vuote",
   "stats.pages": "Pagine",
+  "tools.passwordStrength.title": "Controllo Forza Password",
+  "tools.passwordStrength.desc": "Controlla istantaneamente la forza della tua password.",
 };
 
 export default it;

@@ -70,6 +70,8 @@ const pt: Record<string, string> = {
   "stats.lines": "Linhas",
   "stats.nonEmptyLines": "Linhas não vazias",
   "stats.pages": "Páginas",
+  "tools.passwordStrength.title": "Verificador de Força de Senha",
+  "tools.passwordStrength.desc": "Verifique a força da sua senha instantaneamente.",
 };
 
 export default pt;

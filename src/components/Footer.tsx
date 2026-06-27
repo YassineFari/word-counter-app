@@ -4,11 +4,16 @@ import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 
 const toolLinks = [
-  { href: "/word-counter", key: "nav.wordCounter" as const },
-  { href: "/character-counter", key: "nav.characterCounter" as const },
+  { href: "/word-counter", key: "tools.wordCounter.title" as const },
+  { href: "/character-counter", key: "tools.charCounter.title" as const },
   { href: "/sentence-counter", key: "tools.sentenceCounter.title" as const },
   { href: "/paragraph-counter", key: "tools.paragraphCounter.title" as const },
   { href: "/reading-time-calculator", key: "tools.readingTime.title" as const },
+  { href: "/case-converter", key: "tools.caseConverter.title" as const },
+  { href: "/word-frequency-counter", key: "tools.wordFrequency.title" as const },
+  { href: "/remove-duplicate-lines", key: "tools.removeDuplicates.title" as const },
+  { href: "/text-to-slug", key: "tools.textToSlug.title" as const },
+  { href: "/password-strength-checker", key: "tools.passwordStrength.title" as const },
 ];
 
 export default function Footer() {

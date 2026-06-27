@@ -70,6 +70,8 @@ const fr: Record<string, string> = {
   "stats.lines": "Lignes",
   "stats.nonEmptyLines": "Lignes non vides",
   "stats.pages": "Pages",
+  "tools.passwordStrength.title": "Vérificateur de Force de Mot de Passe",
+  "tools.passwordStrength.desc": "Vérifiez la force de votre mot de passe instantanément.",
 };
 
 export default fr;
