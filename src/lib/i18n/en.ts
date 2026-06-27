@@ -29,6 +29,8 @@ const en: Record<string, string> = {
   "tools.readingTime.desc": "Calculate how long it takes to read any text. Essential for bloggers and content creators.",
   "tools.caseConverter.title": "Case Converter",
   "tools.caseConverter.desc": "Convert text between uppercase, lowercase, title case, and more instantly.",
+  "tools.wordFrequency.title": "Word Frequency Counter",
+  "tools.wordFrequency.desc": "Count how many times each word appears in your text.",
 
 
   "seo.heading": "Why Use TextToolsHub?",
@@ -149,6 +151,32 @@ const en: Record<string, string> = {
   "case.faq.a4": "snake_case is used in programming for variable names, file names, and database columns. Words are separated by underscores and written in lowercase.",
   "case.faq.q5": "Is my text stored or shared?",
   "case.faq.a5": "No. All text processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
+
+  "wf.h1": "Free Word Frequency Counter",
+  "wf.desc": "Analyze how often each word appears in your text. Sort by frequency, filter results, and exclude common words to get meaningful insights. Perfect for writers, SEO specialists, and students.",
+  "wf.seo": "Free online word frequency counter. Count how many times each word appears in your text. Filter by top results, exclude common words, and export data. All processing is done locally in your browser.",
+  "wf.totalUnique": "Unique Words",
+  "wf.top10": "Top 10",
+  "wf.top20": "Top 20",
+  "wf.all": "All",
+  "wf.excludeStopWords": "Exclude common words",
+  "wf.includeStopWords": "Include all words",
+  "wf.table.word": "Word",
+  "wf.table.frequency": "Frequency",
+  "wf.table.percentage": "Percentage",
+  "wf.table.progress": "Progress",
+  "wf.copyTable": "Copy Table",
+  "wf.noResults": "Start typing to see word frequency results.",
+  "wf.faq.q1": "What is word frequency analysis?",
+  "wf.faq.a1": "Word frequency analysis counts how many times each word appears in a text. It helps identify key themes, commonly used terms, and writing patterns in any document.",
+  "wf.faq.q2": "Why exclude common words?",
+  "wf.faq.a2": "Common words (stop words) like 'the', 'and', 'is' appear frequently but carry little meaning. Excluding them helps you focus on the important keywords and topics in your text.",
+  "wf.faq.q3": "How is the percentage calculated?",
+  "wf.faq.a3": "The percentage shows how often a word appears compared to the total word count. For example, if a word appears 10 times in a 200-word text, its frequency is 5%.",
+  "wf.faq.q4": "What is the difference between word count and word frequency?",
+  "wf.faq.a4": "Word count tells you the total number of words, while word frequency shows how many times each individual word appears. Frequency analysis gives deeper insight into word usage patterns.",
+  "wf.faq.q5": "Is my text stored or shared?",
+  "wf.faq.a5": "No. All processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
 
 };
 

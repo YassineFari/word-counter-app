@@ -96,6 +96,16 @@ const tools = [
     ),
   },
   {
+    titleKey: "tools.wordFrequency.title",
+    descKey: "tools.wordFrequency.desc",
+    href: "/word-frequency-counter",
+    icon: (
+      <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  {
     titleKey: "tools.caseConverter.title",
     descKey: "tools.caseConverter.desc",
     href: "/case-converter",

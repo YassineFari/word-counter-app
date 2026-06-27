@@ -159,6 +159,48 @@ export function toSnakeCase(text: string): string {
   return text.toLowerCase().trim().replace(/[\s-]+/g, "_");
 }
 
+// --- Word Frequency ---
+export interface WordFrequencyEntry {
+  word: string;
+  count: number;
+  percentage: number;
+}
+
+export function getWordFrequency(
+  text: string,
+  excludeStopWords = false
+): WordFrequencyEntry[] {
+  if (!text.trim()) return [];
+  const words = text.toLowerCase().match(/\b\w+\b/g);
+  if (!words) return [];
+  const total = words.length;
+  const freq: Record<string, number> = {};
+
+  const stopWords = new Set([
+    "the","a","an","and","or","but","in","on","at","to","for","of","by","with",
+    "from","as","is","was","are","were","be","been","being","have","has","had",
+    "do","does","did","will","would","could","should","may","might","shall",
+    "can","this","that","these","those","it","its","they","them","he","she",
+    "we","you","i","me","my","your","his","her","our","their","not","no",
+    "so","if","than","then","up","out","about","into","over","after","before",
+    "between","under","again","further","once","here","there","when","where",
+    "why","how","all","each","every","both","few","more","most","some","any",
+  ]);
+
+  for (const w of words) {
+    if (excludeStopWords && (w.length < 2 || stopWords.has(w))) continue;
+    freq[w] = (freq[w] || 0) + 1;
+  }
+
+  return Object.entries(freq)
+    .map(([word, count]) => ({
+      word,
+      count,
+      percentage: +((count / total) * 100).toFixed(2),
+    }))
+    .sort((a, b) => b.count - a.count);
+}
+
 // --- Keyword Density ---
 export interface KeywordDensityEntry {
   word: string;
