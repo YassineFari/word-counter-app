@@ -142,6 +142,13 @@ export default function WordFrequencyForm({
                     {excludeStopWords ? t("wf.excludeStopWords") : t("wf.includeStopWords")}
                   </button>
                   <button
+                    onClick={() => setText("")}
+                    disabled={!text.trim()}
+                    className="px-3 py-1.5 text-xs font-medium rounded-lg border border-border text-text-secondary hover:bg-bg-tertiary disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                  >
+                    {t("editor.clear")}
+                  </button>
+                  <button
                     onClick={handleCopyTable}
                     disabled={filteredData.length === 0}
                     className="px-3 py-1.5 text-xs font-medium rounded-lg border border-border text-text-secondary hover:bg-bg-tertiary disabled:opacity-40 disabled:cursor-not-allowed transition-colors"

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "TextToolsHub - Free Online Text Analysis Tools",
     description:
       "Free online text analysis tools. Count words, characters, sentences, paragraphs, and calculate reading time.",
-    url: "https://6a3ee46c25d58aefa1382f1b--chic-marigold-a5df2e.netlify.app",
+    url: "https://texttoolshub.com",
     siteName: "TextToolsHub",
     locale: "en_US",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://6a3ee46c25d58aefa1382f1b--chic-marigold-a5df2e.netlify.app",
+    canonical: "https://texttoolshub.com",
   },
 };
 

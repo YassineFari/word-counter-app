@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #60a5fa;
+  --color-primary: #4F46E5;
+  --color-primary-dark: #4338CA;
+  --color-primary-light: #818CF8;
   --color-secondary: #10b981;
   --color-secondary-dark: #059669;
   --color-secondary-light: #34d399;
@@ -27,12 +27,13 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 .dark {
-  --color-primary: #60a5fa;
-  --color-primary-dark: #3b82f6;
-  --color-primary-light: #93c5fd;
+  --color-primary: #818CF8;
+  --color-primary-dark: #6366F1;
+  --color-primary-light: #A5B4FC;
   --color-secondary: #34d399;
   --color-secondary-dark: #10b981;
   --color-secondary-light: #6ee7b7;

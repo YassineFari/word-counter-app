@@ -8,11 +8,17 @@ import { languages } from "@/lib/i18n";
 import MegaMenu from "./MegaMenu";
 import { categories } from "@/lib/navigation";
 
-
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const { lang, setLang, t } = useLanguage();
   const [langOpen, setLangOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [expandedMobileCat, setExpandedMobileCat] = useState<string | null>(null);
+
+  const closeMobile = () => {
+    setMobileNavOpen(false);
+    setExpandedMobileCat(null);
+  };
 
   return (
     <header className="border-b border-border bg-bg sticky top-0 z-50">
@@ -27,20 +33,20 @@ export default function Header() {
             className="h-12 w-auto"
           />
         </Link>
-        <nav className="flex items-center gap-6 text-sm">
+        <nav className="hidden sm:flex items-center gap-6 text-sm">
           <MegaMenu categories={categories} />
           <Link href="/#faq" className="font-semibold text-text-secondary hover:text-primary transition-colors">
             FAQ
           </Link>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1.5 px-2 py-1.5 text-xs font-medium rounded-lg text-text-secondary hover:bg-bg-tertiary transition-colors"
             >
               <span className={`fi fi-${languages.find(l => l.code === lang)?.flag}`} />
-              <span>{lang.toUpperCase()}</span>
+              <span className="hidden sm:inline">{lang.toUpperCase()}</span>
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -83,8 +89,83 @@ export default function Header() {
               </svg>
             )}
           </button>
+
+          <button
+            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            className="flex sm:hidden p-2 rounded-lg text-text-secondary hover:bg-bg-tertiary transition-colors"
+            aria-label="Toggle navigation"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {mobileNavOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
+
+      {mobileNavOpen && (
+        <div className="sm:hidden fixed left-0 right-0 top-14 bottom-0 bg-bg z-30 overflow-y-auto border-t border-border">
+          <div className="p-4 space-y-1">
+            {categories.map((cat) => {
+              const isExpanded = expandedMobileCat === cat.id;
+              return (
+                <div key={cat.id}>
+                  <button
+                    onClick={() => setExpandedMobileCat(isExpanded ? null : cat.id)}
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium text-text hover:bg-bg-tertiary transition-colors"
+                  >
+                    <span className="flex items-center gap-2">
+                      <span>{cat.emoji}</span>
+                      {t(cat.titleKey)}
+                    </span>
+                    <svg
+                      className={`w-3 h-3 text-text-muted transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-200 ease-out ${
+                      isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="ml-4 pl-3 border-l-2 border-border pb-2 space-y-1">
+                      {cat.tools.map((tool) => (
+                        <Link
+                          key={tool.id}
+                          href={tool.href}
+                          onClick={closeMobile}
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-secondary hover:text-primary hover:bg-bg-tertiary transition-colors"
+                        >
+                          <div className="w-6 h-6 rounded-md bg-bg-secondary flex items-center justify-center shrink-0 text-xs">
+                            {tool.icon}
+                          </div>
+                          <div>
+                            <div className="font-medium">{t(tool.nameKey)}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+            <div className="border-t border-border pt-2 mt-2">
+              <Link
+                href="/#faq"
+                onClick={closeMobile}
+                className="block px-4 py-3 rounded-lg font-semibold text-text-secondary hover:bg-bg-tertiary hover:text-primary transition-colors"
+              >
+                FAQ
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
