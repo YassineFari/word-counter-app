@@ -26,6 +26,8 @@ const en: Record<string, string> = {
   "tools.paragraphCounter.desc": "Count paragraphs in your text and maintain proper content structure.",
   "tools.readingTime.title": "Reading Time Calculator",
   "tools.readingTime.desc": "Calculate how long it takes to read any text. Essential for bloggers and content creators.",
+  "tools.caseConverter.title": "Case Converter",
+  "tools.caseConverter.desc": "Convert text between uppercase, lowercase, title case, and more instantly.",
 
 
   "seo.heading": "Why Use TextToolsHub?",
@@ -132,6 +134,20 @@ const en: Record<string, string> = {
   "rt.faq.a4": "Yes, speaking time is typically slower than reading time. While we read at about 238 WPM, we speak at about 150-180 WPM. Our calculator provides reading time estimates specifically.",
   "rt.faq.q5": "Can I use this for academic papers?",
   "rt.faq.a5": "Yes, the reading time calculator works for any text, including academic papers, articles, reports, and books. It helps you estimate how long your audience will need to read your content.",
+
+  "case.h1": "Free Case Converter Tool",
+  "case.desc": "Convert text between different letter cases instantly. Choose from uppercase, lowercase, title case, sentence case, camelCase, and snake_case. Perfect for programmers, writers, and content creators.",
+  "case.seo": "Free online case converter tool. Convert text to uppercase, lowercase, title case, sentence case, camelCase, and snake_case instantly. All processing is done locally in your browser.",
+  "case.faq.q1": "What is a case converter?",
+  "case.faq.a1": "A case converter is a tool that transforms the letter case of your text. It can convert text to uppercase, lowercase, title case, sentence case, camelCase, snake_case, and more.",
+  "case.faq.q2": "What is the difference between title case and sentence case?",
+  "case.faq.a2": "Title case capitalizes the first letter of every word, while sentence case capitalizes only the first letter of each sentence. Title case is often used for headings and titles, while sentence case is used for normal text.",
+  "case.faq.q3": "What is camelCase used for?",
+  "case.faq.a3": "camelCase is commonly used in programming for variable names, function names, and identifiers. It combines words without spaces, capitalizing each word after the first.",
+  "case.faq.q4": "What is snake_case used for?",
+  "case.faq.a4": "snake_case is used in programming for variable names, file names, and database columns. Words are separated by underscores and written in lowercase.",
+  "case.faq.q5": "Is my text stored or shared?",
+  "case.faq.a5": "No. All text processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
 
 };
 

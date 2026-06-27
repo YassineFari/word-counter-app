@@ -76,8 +76,17 @@ export const categories: NavCategory[] = [
           </svg>
         ),
       },
+      {
+        id: "case-converter",
+        nameKey: "tools.caseConverter.title",
+        descKey: "tools.caseConverter.desc",
+        href: "/case-converter",
+        icon: (
+          <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7V4m0 0h3M4 4l4 4m12-4v3m0-3h-3m3 0l-4 4M4 17v3m0 0h3m-3 0l4-4m12 4v-3m0 3h-3m3 0l-4-4" />
+          </svg>
+        ),
+      },
     ],
   },
-
-
 ];

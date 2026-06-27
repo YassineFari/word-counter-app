@@ -23,6 +23,8 @@ const it: Record<string, string> = {
   "tools.paragraphCounter.title": "Contaparagrafi",
   "tools.paragraphCounter.desc": "Conta i paragrafi nel tuo testo e mantieni una struttura appropriata.",
   "tools.readingTime.title": "Calcolatore di lettura",
+  "tools.caseConverter.title": "Convertitore maiuscole",
+  "tools.caseConverter.desc": "Converti testo in maiuscolo, minuscolo, titolo e altro istantaneamente.",
   "tools.readingTime.desc": "Calcola quanto tempo ci vuole per leggere qualsiasi testo. Essenziale per blogger e creatori.",
 
   "seo.heading": "Perché usare TextToolsHub?",

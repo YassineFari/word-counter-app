@@ -23,6 +23,8 @@ const de: Record<string, string> = {
   "tools.paragraphCounter.title": "Absatzzähler",
   "tools.paragraphCounter.desc": "Zählen Sie Absätze in Ihrem Text und behalten Sie eine saubere Struktur bei.",
   "tools.readingTime.title": "Lesezeit-Rechner",
+  "tools.caseConverter.title": "Textumwandler",
+  "tools.caseConverter.desc": "Konvertieren Sie Text in GroÃŸbuchstaben, Kleinbuchstaben und mehr.",
   "tools.readingTime.desc": "Berechnen Sie die Lesezeit für jeden Text. Unverzichtbar für Blogger und Content-Ersteller.",
 
   "seo.heading": "Warum TextToolsHub?",

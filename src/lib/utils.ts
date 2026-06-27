@@ -81,6 +81,47 @@ export function generateId(): string {
   return Math.random().toString(36).substring(2, 9);
 }
 
+// --- Case Conversion ---
+export function toUpperCase(text: string): string {
+  return text.toUpperCase();
+}
+
+export function toLowerCase(text: string): string {
+  return text.toLowerCase();
+}
+
+export function toTitleCase(text: string): string {
+  return text.replace(/\w\S*/g, (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+}
+
+export function toSentenceCase(text: string): string {
+  const lower = text.toLowerCase();
+  return lower.replace(/(?:^\s*\w|[.!?]\s*\w)/g, (match) =>
+    match.toUpperCase()
+  );
+}
+
+export function toCamelCase(text: string): string {
+  const words = text
+    .toLowerCase()
+    .split(/[\s_-]+/)
+    .filter(Boolean);
+  if (words.length === 0) return "";
+  return (
+    words[0] +
+    words
+      .slice(1)
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join("")
+  );
+}
+
+export function toSnakeCase(text: string): string {
+  return text.toLowerCase().trim().replace(/[\s-]+/g, "_");
+}
+
 // --- Keyword Density ---
 export interface KeywordDensityEntry {
   word: string;

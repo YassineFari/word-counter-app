@@ -23,6 +23,8 @@ const es: Record<string, string> = {
   "tools.paragraphCounter.title": "Contador de párrafos",
   "tools.paragraphCounter.desc": "Cuente los párrafos en su texto y mantenga una estructura adecuada.",
   "tools.readingTime.title": "Calculadora de lectura",
+  "tools.caseConverter.title": "Convertidor de mayÃºsculas",
+  "tools.caseConverter.desc": "Convierta texto a mayÃºsculas, minÃºsculas, tÃ­tulo, etc. al instante.",
   "tools.readingTime.desc": "Calcule cuánto tiempo se tarda en leer cualquier texto. Esencial para blogueros y creadores.",
 
   "seo.heading": "¿Por qué usar TextToolsHub?",
