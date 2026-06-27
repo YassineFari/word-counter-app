@@ -166,6 +166,60 @@ export interface WordFrequencyEntry {
   percentage: number;
 }
 
+// --- Remove Duplicate Lines ---
+export interface RemoveDuplicateResult {
+  output: string;
+  removed: number;
+  remaining: number;
+}
+
+export function removeDuplicateLines(
+  text: string,
+  options: {
+    caseSensitive: boolean;
+    trimWhitespace: boolean;
+    removeEmptyLines: boolean;
+    sortLines: boolean;
+  }
+): RemoveDuplicateResult {
+  let lines = text.split("\n");
+  const totalLines = lines.length;
+
+  if (options.trimWhitespace) {
+    lines = lines.map((l) => l.trim());
+  }
+
+  if (options.removeEmptyLines) {
+    lines = lines.filter((l) => l.length > 0);
+  }
+
+  const seen = new Set<string>();
+  const unique: string[] = [];
+
+  for (const line of lines) {
+    const key = options.caseSensitive ? line : line.toLowerCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      unique.push(line);
+    }
+  }
+
+  if (options.sortLines) {
+    const cmp = options.caseSensitive
+      ? (a: string, b: string) => a.localeCompare(b)
+      : (a: string, b: string) => a.toLowerCase().localeCompare(b.toLowerCase());
+    unique.sort(cmp);
+  }
+
+  const removed = totalLines - unique.length;
+
+  return {
+    output: unique.join("\n"),
+    removed,
+    remaining: unique.length,
+  };
+}
+
 export function getWordFrequency(
   text: string,
   excludeStopWords = false

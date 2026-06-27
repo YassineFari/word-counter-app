@@ -31,6 +31,8 @@ const en: Record<string, string> = {
   "tools.caseConverter.desc": "Convert text between uppercase, lowercase, title case, and more instantly.",
   "tools.wordFrequency.title": "Word Frequency Counter",
   "tools.wordFrequency.desc": "Count how many times each word appears in your text.",
+  "tools.removeDuplicates.title": "Remove Duplicate Lines",
+  "tools.removeDuplicates.desc": "Remove duplicate lines and clean up your text.",
 
 
   "seo.heading": "Why Use TextToolsHub?",
@@ -177,6 +179,30 @@ const en: Record<string, string> = {
   "wf.faq.a4": "Word count tells you the total number of words, while word frequency shows how many times each individual word appears. Frequency analysis gives deeper insight into word usage patterns.",
   "wf.faq.q5": "Is my text stored or shared?",
   "wf.faq.a5": "No. All processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
+
+  "rd.h1": "Remove Duplicate Lines",
+  "rd.desc": "Remove duplicate lines from any text instantly. Choose from case-sensitive matching, whitespace trimming, empty line removal, and alphabetical sorting for precise control.",
+  "rd.seo": "Free online duplicate line remover. Delete repeated lines, clean up text data, and sort results alphabetically. All processing is done locally in your browser.",
+  "rd.realTime": "Real-time",
+  "rd.input": "Input",
+  "rd.inputPlaceholder": "Paste your text with duplicate lines here...",
+  "rd.output": "Output",
+  "rd.outputPlaceholder": "Cleaned text will appear here...",
+  "rd.caseSensitive": "Case sensitive",
+  "rd.trimWhitespace": "Trim whitespace",
+  "rd.removeEmptyLines": "Remove empty lines",
+  "rd.sortLines": "Sort A-Z",
+  "rd.stats": "Removed {removed} duplicates, {remaining} lines remaining",
+  "rd.faq.q1": "What does removing duplicate lines do?",
+  "rd.faq.a1": "It scans your text line by line and removes any line that appears more than once, keeping only the first occurrence. This helps clean up lists, logs, and data exports.",
+  "rd.faq.q2": "What is the difference between case sensitive and insensitive?",
+  "rd.faq.a2": "Case sensitive treats 'Hello' and 'hello' as different lines. Case insensitive treats them as duplicates. Use case sensitive when exact spelling matters.",
+  "rd.faq.q3": "Why would I want to trim whitespace?",
+  "rd.faq.a3": "Trimming whitespace removes extra spaces at the beginning or end of each line before comparing. This prevents the same text from appearing as a duplicate just because of spacing differences.",
+  "rd.faq.q4": "What happens if I enable sorting?",
+  "rd.faq.a4": "After removing duplicates, the remaining lines are sorted alphabetically. This makes it easier to browse and find specific lines in large text blocks.",
+  "rd.faq.q5": "Is my text stored or shared?",
+  "rd.faq.a5": "No. All processing is done entirely in your browser. Your text never leaves your device. There are no server uploads, no data collection, and no registration required.",
 
 };
 
