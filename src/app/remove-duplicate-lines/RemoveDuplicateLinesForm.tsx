@@ -166,39 +166,39 @@ export default function RemoveDuplicateLinesForm({
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <label className="flex items-center gap-2 text-sm text-text cursor-pointer">
+              <label className="flex items-center gap-2 text-sm text-text cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={options.caseSensitive}
                   onChange={() => toggleOption("caseSensitive")}
-                  className="w-4 h-4 rounded border-border text-primary focus:ring-primary/30"
+                  className="accent-[var(--color-primary)] w-4 h-4"
                 />
                 {t("rd.caseSensitive")}
               </label>
-              <label className="flex items-center gap-2 text-sm text-text cursor-pointer">
+              <label className="flex items-center gap-2 text-sm text-text cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={options.trimWhitespace}
                   onChange={() => toggleOption("trimWhitespace")}
-                  className="w-4 h-4 rounded border-border text-primary focus:ring-primary/30"
+                  className="accent-[var(--color-primary)] w-4 h-4"
                 />
                 {t("rd.trimWhitespace")}
               </label>
-              <label className="flex items-center gap-2 text-sm text-text cursor-pointer">
+              <label className="flex items-center gap-2 text-sm text-text cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={options.removeEmptyLines}
                   onChange={() => toggleOption("removeEmptyLines")}
-                  className="w-4 h-4 rounded border-border text-primary focus:ring-primary/30"
+                  className="accent-[var(--color-primary)] w-4 h-4"
                 />
                 {t("rd.removeEmptyLines")}
               </label>
-              <label className="flex items-center gap-2 text-sm text-text cursor-pointer">
+              <label className="flex items-center gap-2 text-sm text-text cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={options.sortLines}
                   onChange={() => toggleOption("sortLines")}
-                  className="w-4 h-4 rounded border-border text-primary focus:ring-primary/30"
+                  className="accent-[var(--color-primary)] w-4 h-4"
                 />
                 {t("rd.sortLines")}
               </label>
